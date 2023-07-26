@@ -1,12 +1,23 @@
-import { useState } from 'react'
 import './App.css'
 
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import Home from './components/Home/Home';
+import Line from './components/Line/Line';
+import Bar from './components/Bar/Bar';
+import Pie from './components/Pie/Pie';
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div>
-      Hola buenas
+      <Router>
+        <Routes>
+          <Route path='/'  element={<Home />} />
+          <Route path='/bar' element={<Bar />}/>
+          <Route path='/line' element={<Line />}/>
+          <Route path='/pie' element={<Pie />}/>
+        </Routes>
+      </Router>
     </div>
   )
 }

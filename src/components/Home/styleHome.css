@@ -1,0 +1,32 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list{
+    text-decoration: none;
+    list-style: none;
+
+}
+.link, .link:visited{
+    color: black;
+    text-decoration: none;
+
+}
+
+.itemList{
+    font-size: 45px;
+    margin-bottom: 4px;
+    border: 1px solid rgb(1, 1, 132);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    background-color: rgba(127, 255, 212, 0.596);
+}
+
+.icon{
+    width: 30px;
+}
