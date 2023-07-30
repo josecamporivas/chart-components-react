@@ -24,14 +24,16 @@ ChartJS.register(
 const DEFAULT_VALUES_AXISX = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 const DEFAULT_DATASETS = [
   {
+    id: '3a62a2b1-be81-4795-a3b5-4741146cf1e8',
     label: 'Dataset 1',
     data: [10, 4, 5, 15, 2, 98, 9],
-    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+    backgroundColor: '#ff6384',
   },
   {
+    id: 'af4aa9af-03a3-4f1f-a518-037e230a156c',
     label: 'Dataset 2',
     data: [10, 4, 5, 15, 2, 98, 9],
-    backgroundColor: 'rgba(53, 162, 235, 0.5)',
+    backgroundColor: '#35a2eb',
   },
 ];
 
@@ -43,14 +45,25 @@ export default function Bar(){
         datasets
     }
 
+    const changeDataset = (oldDatasetId, newDataset) => {
+      const indexOldDataset = datasets.findIndex(dataset => dataset.id === oldDatasetId)
+      const newDatasets = [
+        ...datasets.slice(0, indexOldDataset),
+        newDataset,
+        ...datasets.slice(indexOldDataset + 1)
+      ]
+
+      setDatasets(newDatasets)
+    }
+
     return (
       <main>
         <section className='barContainer'>
-            <BarComponent data={data} />
-            {datasets.map(dataset => {
-              const {label, data, backgroundColor} = dataset
-              return <BarDataset key={label} label={label} data={data} backgroundColor={backgroundColor} />
-            })}
+          <BarComponent data={data} className='bar'/>
+          {datasets.map(dataset => {
+            const {id, label, data, backgroundColor} = dataset
+            return <BarDataset key={id} id={id} label={label} data={data} backgroundColor={backgroundColor} changeDataset={changeDataset}/>
+          })} 
         </section>
       </main>
     )

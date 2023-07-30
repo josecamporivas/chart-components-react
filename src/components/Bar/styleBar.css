@@ -1,3 +1,31 @@
 .barContainer{
-    width: 500px;
+    width: 75ch;
+}
+
+.bar{
+    width: 100%;
+    height: auto;
+}
+
+.datasetContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.inputDataset{
+    padding: 0.625rem; 
+    border-radius: 0.5rem; 
+    border-width: 1px; 
+    border-color: #D1D5DB; 
+    width: 100%; 
+    font-size: 0.875rem;
+    line-height: 1.25rem; 
+    color: #111827; 
+    background-color: #F9FAFB; 
+} 
+
+
+.inputDataset:focus{
+    box-shadow: #0000ff7f 0 0 0 3px #0000ff7f;
 }
