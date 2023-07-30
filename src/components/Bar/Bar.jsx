@@ -56,14 +56,23 @@ export default function Bar(){
       setDatasets(newDatasets)
     }
 
+    const deleteDataset = (id) => {
+      setDatasets(datasets.filter(dataset => dataset.id !== id))
+    }
+
     return (
       <main>
         <section className='barContainer'>
           <BarComponent data={data} className='bar'/>
           {datasets.map(dataset => {
             const {id, label, data, backgroundColor} = dataset
-            return <BarDataset key={id} id={id} label={label} data={data} backgroundColor={backgroundColor} changeDataset={changeDataset}/>
+            return <BarDataset key={id} id={id} label={label} data={data} 
+                    backgroundColor={backgroundColor} changeDataset={changeDataset}
+                    deleteDataset={deleteDataset} />
           })} 
+        </section>
+        <section>
+
         </section>
       </main>
     )
