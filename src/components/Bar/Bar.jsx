@@ -60,6 +60,16 @@ export default function Bar(){
       setDatasets(datasets.filter(dataset => dataset.id !== id))
     }
 
+    const addDataset = (e) => {
+      const emptyDataset = {
+        id: crypto.randomUUID(),
+        label: '',
+        data: [0,0,0,0,0,0,0],
+        backgroundColor: '#' + Math.floor(Math.random()*16777215).toString(16)
+      }
+      setDatasets([...datasets, emptyDataset])
+    }
+
     return (
       <main>
         <section className='barContainer'>
@@ -72,7 +82,9 @@ export default function Bar(){
           })} 
         </section>
         <section>
-
+          <button className='button' onClick={addDataset}>
+            <img className='icon' src='/addIcon.svg' alt='add icon'/>
+          </button>
         </section>
       </main>
     )

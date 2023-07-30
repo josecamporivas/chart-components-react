@@ -38,7 +38,7 @@ export default function BarDataset({id, label, data, backgroundColor, changeData
             <input className='inputDataset' value={label} onChange={handleChangeLabel} />
             <input className='inputDataset' value={data.join()} onChange={handleChangeData} />
             <input type='color' value={backgroundColor} onChange={handleChangeColor}/>
-            <button className='deleteButton' onClick={handleDelete}><img src='/deleteIcon.svg' alt='delete icon'/></button>
+            <button className='button' onClick={handleDelete}><img className='icon' src='/deleteIcon.svg' alt='delete icon'/></button>
         </div>
     )
 }

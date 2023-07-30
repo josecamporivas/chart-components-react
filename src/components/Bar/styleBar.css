@@ -28,11 +28,15 @@
     background-color: #F9FAFB; 
 } 
 
-.deleteButton{
+.button{
     border-radius: 10px;
-    width: 70px;
     height: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.icon{
+    width: 25px;
+    height: auto;
 }
