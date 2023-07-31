@@ -5,6 +5,7 @@
 .bar{
     width: 100%;
     height: auto;
+    margin-bottom: 20px;
 }
 
 .datasetContainer{
@@ -39,4 +40,29 @@
 .icon{
     width: 25px;
     height: auto;
+}
+
+.navBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeLink{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: fit-content;
+    padding: 0 5px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+    border-radius: 10px;
+}
+
+.homeLink:hover{
+    background-color: rgba(128, 128, 128, 0.258);
+}
+
 }
