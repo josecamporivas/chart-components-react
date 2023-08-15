@@ -1,0 +1,9 @@
+.lineContainer{
+    width: 75ch;
+}
+
+.line{
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}

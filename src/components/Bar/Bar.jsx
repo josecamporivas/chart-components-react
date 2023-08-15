@@ -10,8 +10,9 @@ import {
     Legend,
   } from 'chart.js';
 import { useState } from 'react';
-import BarDataset from './BarDataset';
-import { Link } from 'react-router-dom';
+import InputDataset from '../InputDataset/InputDataset';
+import InputLabels from '../InputLabels/InputLabels';
+import NavBar from '../NavBar/NavBar';
   
 ChartJS.register(
   CategoryScale,
@@ -28,7 +29,7 @@ const DEFAULT_DATASETS = [
     id: '3a62a2b1-be81-4795-a3b5-4741146cf1e8',
     label: 'Dataset 1',
     data: [10, 4, 5, 15, 2, 98, 9],
-    backgroundColor: '#ff6384',
+    backgroundColor: '#36cc00',
   },
   {
     id: 'af4aa9af-03a3-4f1f-a518-037e230a156c',
@@ -41,6 +42,7 @@ const DEFAULT_DATASETS = [
 export default function Bar(){
     const [valuesAxisX, setValuesAxisX] = useState(DEFAULT_VALUES_AXISX)
     const [datasets, setDatasets] = useState(DEFAULT_DATASETS)
+    const [showChangeLabels, setShowChangeLabels] = useState(false)
 
     const data = {
         labels: valuesAxisX,
@@ -72,21 +74,24 @@ export default function Bar(){
       setDatasets([...datasets, emptyDataset])
     }
 
+    const toggleInputLabels = (e) => {
+      setShowChangeLabels(!showChangeLabels)
+    }
+
     return (
       <>
-        <nav className='navBar'>
-          <Link to='/' className='homeLink'>
-            <img className='icon' src='/arrowLeft.svg' alt='return home' />
-            <p>Home</p>
-          </Link>
-          </button>
-        </nav>
+        <NavBar />
         <main>
+          <button className='button buttonChange' onClick={toggleInputLabels}>
+            {showChangeLabels ? 'Confirm changes': 'Change labels'}
+          </button>
           <section className='barContainer'>
             <BarComponent data={data} className='bar'/>
+            {showChangeLabels && <InputLabels labels={valuesAxisX} setLabels={setValuesAxisX} />}
+
             {datasets.map(dataset => {
               const {id, label, data, backgroundColor} = dataset
-              return <BarDataset key={id} id={id} label={label} data={data} 
+              return <InputDataset key={id} id={id} label={label} data={data} 
               backgroundColor={backgroundColor} changeDataset={changeDataset}
               deleteDataset={deleteDataset} />
             })} 
@@ -100,10 +105,3 @@ export default function Bar(){
       </>
     )
 }
-
-/* 
-  TODO:
-  - Add personalization in the data and styles (options)
-  - Add vertical Bar and Horizontal Bar (with options)
-
-*/

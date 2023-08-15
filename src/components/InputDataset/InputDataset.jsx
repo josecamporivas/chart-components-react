@@ -1,11 +1,11 @@
-import './styleBar.css'
+import './styleInputDataset.css'
 
-export default function BarDataset({id, label, data, backgroundColor, changeDataset, deleteDataset}){
+export default function InputDataset({id, label, data, backgroundColor, changeDataset, deleteDataset, borderColor}){
 
     const handleChangeLabel = (e) => {
         const newDataset = {
             label: e.target.value,
-            data, backgroundColor, id
+            data, backgroundColor, id, borderColor
         }
 
         changeDataset(id, newDataset)
@@ -14,15 +14,17 @@ export default function BarDataset({id, label, data, backgroundColor, changeData
     const handleChangeData = (e) => {
         const newDataset = {
             data: e.target.value.split(','),
-            label, backgroundColor, id
+            label, backgroundColor, id, borderColor
         }
 
         changeDataset(id, newDataset)
     }
 
     const handleChangeColor = (e) => {
+        const newColor = e.target.value
         const newDataset = {
-            backgroundColor: e.target.value,
+            backgroundColor: newColor,
+            borderColor: newColor,
             label, data, id
         }
 
@@ -38,9 +40,9 @@ export default function BarDataset({id, label, data, backgroundColor, changeData
             <input className='inputDataset' value={label} onChange={handleChangeLabel} />
             <input className='inputDataset' value={data.join()} onChange={handleChangeData} />
             <input type='color' value={backgroundColor} onChange={handleChangeColor}/>
-            <button className='button' onClick={handleDelete}><img className='icon' src='/deleteIcon.svg' alt='delete icon'/></button>
+            <button className='button' onClick={handleDelete}>
+                <img className='icon' src='/deleteIcon.svg' alt='delete icon'/>
+            </button>
         </div>
     )
 }
-
-/* TODO: MAKE THE VALUES OF THIS COMPONENT EDITABLE */

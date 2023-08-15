@@ -8,27 +8,6 @@
     margin-bottom: 20px;
 }
 
-.datasetContainer{
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
-.inputDataset{
-    padding: 0.625rem; 
-    border-radius: 0.5rem; 
-    border-width: 1px; 
-    border-color: #D1D5DB; 
-    width: 100%; 
-    font-size: 0.875rem;
-    line-height: 1.25rem; 
-    color: #111827; 
-    background-color: #F9FAFB; 
-} 
-
 .button{
     border-radius: 10px;
     height: 35px;
@@ -42,27 +21,6 @@
     height: auto;
 }
 
-.navBar{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.homeLink{
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    width: fit-content;
-    padding: 0 5px;
-    margin-left: 10px;
-    text-decoration: none;
-    color: black;
-    border-radius: 10px;
-}
-
-.homeLink:hover{
-    background-color: rgba(128, 128, 128, 0.258);
-}
-
+.buttonChange{
+    margin: 0 auto;
 }
