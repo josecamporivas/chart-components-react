@@ -16,3 +16,27 @@ export const DEFAULT_DATASETS = [
       borderColor: '#35a2eb'
     }
 ];
+
+export const DEFAULT_DATASET_PIE = {
+  label: 'Value',
+  data: [12, 19, 3, 5, 2, 3, 10],
+  backgroundColor: [
+    '#ff6384',
+    '#36a2eb',
+    '#ffce56',
+    '#4bc0c0',
+    '#9966ff',
+    '#ff9f40',
+    '#199f40'
+  ],
+  borderColor: [
+    '#ff6384',
+    '#36a2eb',
+    '#ffce56',
+    '#4bc0c0',
+    '#9966ff',
+    '#ff9f40',
+    '#199f40'
+  ],
+  borderWidth: 1,
+}
