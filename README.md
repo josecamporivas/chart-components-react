@@ -1,8 +1,18 @@
-# React + Vite
+# About this project
+During my college classes, I sometimes needed to create chats with data.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+As I couldn't find a website that I liked, I made it myself. :v:
 
-Currently, two official plugins are available:
+It has 3 types of charts: bar, line, and pie.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies
+I use `React + Vite` and `react-chartjs-2`
+
+## Set up
+`git clone <project-url>`
+
+`npm install`
+
+`npm run dev`
+
+Go to `http://localhost:5173` in your browser 
