@@ -15,6 +15,7 @@ import NavBar from '../NavBar/NavBar';
 import './styleLine.css'
 import InputLabels from '../InputLabels/InputLabels';
 import InputDataset from '../InputDataset/InputDataset';
+import { DEFAULT_DATASETS, DEFAULT_LABELS } from '../../constants/constants';
 
 ChartJS.register(
     CategoryScale,
@@ -26,7 +27,7 @@ ChartJS.register(
     Legend
 );
 
-const DEFAULT_VALUES_AXISX = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+/* const DEFAULT_VALUES_AXISX = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 const DEFAULT_DATASETS = [
     {
       id: '3a62a2b1-be81-4795-a3b5-4741146cf1e8',
@@ -42,16 +43,16 @@ const DEFAULT_DATASETS = [
       backgroundColor: '#35a2eb',
       borderColor: '#35a2eb'
     }
-];
+]; */
 
 
 export default function Line(){
-    const [valuesAxisX, setValuesAxisX] = useState(DEFAULT_VALUES_AXISX)
+    const [valuesAxisX, setValuesAxisX] = useState(DEFAULT_LABELS)
     const [showChangeLabels, setShowChangeLabels] = useState(false)
     const [datasets, setDatasets] = useState(DEFAULT_DATASETS)
 
     const data = {
-        labels: DEFAULT_VALUES_AXISX,
+        labels: valuesAxisX,
         datasets
     }
 
@@ -83,9 +84,7 @@ export default function Line(){
     }
 
     const toggleInputLabels = (e) => {
-        e.preventDefault()
-
-        /* TODO */
+        setShowChangeLabels(!showChangeLabels)
     }
 
     return (

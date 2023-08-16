@@ -22,25 +22,10 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
-const DEFAULT_VALUES_AXISX = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-const DEFAULT_DATASETS = [
-  {
-    id: '3a62a2b1-be81-4795-a3b5-4741146cf1e8',
-    label: 'Dataset 1',
-    data: [10, 4, 5, 15, 2, 98, 9],
-    backgroundColor: '#36cc00',
-  },
-  {
-    id: 'af4aa9af-03a3-4f1f-a518-037e230a156c',
-    label: 'Dataset 2',
-    data: [10, 4, 5, 15, 2, 98, 9],
-    backgroundColor: '#35a2eb',
-  },
-];
+import {DEFAULT_LABELS, DEFAULT_DATASETS} from '../../constants/constants' 
 
 export default function Bar(){
-    const [valuesAxisX, setValuesAxisX] = useState(DEFAULT_VALUES_AXISX)
+    const [valuesAxisX, setValuesAxisX] = useState(DEFAULT_LABELS)
     const [datasets, setDatasets] = useState(DEFAULT_DATASETS)
     const [showChangeLabels, setShowChangeLabels] = useState(false)
 
